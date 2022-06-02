@@ -20,16 +20,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Row(
-                modifier = Modifier
-                    .fillMaxHeight(0.5f)
-                    .background(Color.Green)
-                    .fillMaxWidth()
-                    .padding(16.dp)
-            ) {
-                Text("Unicorn")
-                Text("Jetpack")
-                Text("Compose")
+            UnicornJetpackTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(color = MaterialTheme.colors.background) {
+                    Greeting("Android")
+                }
             }
         }
     }
@@ -43,5 +38,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-        Greeting("Android")
+    UnicornJetpackTheme {
+        Greeting(name = "Android")
+    }
 }
