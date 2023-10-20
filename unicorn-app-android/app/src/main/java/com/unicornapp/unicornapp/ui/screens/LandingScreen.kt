@@ -32,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.unicornapp.unicornapp.R
+import com.unicornapp.unicornapp.ui.navigation.Screen
 import com.unicornapp.unicornapp.ui.theme.PrimaryColor
 import com.unicornapp.unicornapp.ui.theme.TertiaryColor
 import com.unicornapp.unicornapp.ui.theme.TransparentColor
@@ -42,7 +43,7 @@ fun LandingScreen(
     navController: NavController
 ) {
     val gradientColors = listOf(
-        TertiaryColor,
+        PrimaryColor,
         PrimaryColor
     )
     var showExpandedText by remember {
@@ -73,7 +74,7 @@ fun LandingScreen(
                     .size(150.dp)
             )
             ClickableText(
-                text = AnnotatedString("PropzAI"),
+                text = AnnotatedString("UnicornApp"),
                 style = MaterialTheme.typography.h3.copy(color = Color.White),
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally),
@@ -84,7 +85,7 @@ fun LandingScreen(
             Spacer(modifier = Modifier.height(8.dp))
             AnimatedVisibility(visible = showExpandedText) {
                 Text(
-                    text = "The AI Powered Real Estate Platform",
+                    text = "The Unicorn App Platform",
                     color = Color.White,
                     style = MaterialTheme.typography.body1.copy(color = Color.White),
                     textAlign = TextAlign.Center,
@@ -112,6 +113,9 @@ fun LandingScreen(
             Button(
                 onClick = {
                           // TODO-FIXME
+                          navController.navigate(
+                              Screen.LoginScreen.route
+                          )
                 },
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)

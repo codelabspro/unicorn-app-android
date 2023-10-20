@@ -8,6 +8,8 @@ import androidx.navigation.compose.composable
 import com.unicornapp.unicornapp.ui.screens.ContactScreen
 import com.unicornapp.unicornapp.ui.screens.HomeDetailScreen
 import com.unicornapp.unicornapp.ui.screens.HomeScreen
+import com.unicornapp.unicornapp.ui.screens.LandingScreen
+import com.unicornapp.unicornapp.ui.screens.LoginScreen
 import com.unicornapp.unicornapp.ui.screens.NotificationScreen
 
 @Composable
@@ -16,8 +18,25 @@ fun SetupNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screen.HomeScreen.route
+        startDestination = Screen.LandingScreen.route
     ) {
+
+        composable(
+            route = Screen.LandingScreen.route
+        ) {
+            LandingScreen(
+                navController = navController
+            )
+        }
+
+        composable(
+            route = Screen.LoginScreen.route
+        ) {
+            LoginScreen(
+                navController = navController
+            )
+        }
+
         composable(
             route = Screen.HomeScreen.route
         ) {
