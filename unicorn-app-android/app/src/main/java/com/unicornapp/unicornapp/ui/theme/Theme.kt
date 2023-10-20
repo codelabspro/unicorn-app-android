@@ -11,10 +11,12 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Transparent
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
+
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -23,11 +25,10 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Color(0xFF753A88),
-    secondary = Color(0xFF516395),
-    tertiary = Color(0xFF185A9D),
-
-    background = Color(0xFFAA076B),
+    primary = Purple40,
+    secondary = PurpleGrey40,
+    tertiary = Transparent,
+    background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
     onPrimary = Color.White,
     onSecondary = Color.White,
@@ -53,13 +54,14 @@ fun UnicornAppTheme(
         else -> LightColorScheme
     }
     val view = LocalView.current
+    /* TODO-FIXME
     if (!view.isInEditMode) {
         SideEffect {
             (view.context as Activity).window.statusBarColor = colorScheme.primary.toArgb()
             ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = darkTheme
         }
     }
-
+    */
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,

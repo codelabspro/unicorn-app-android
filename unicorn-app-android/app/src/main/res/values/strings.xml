@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UnicornApp</string>
+    <string name="unicorn_content_description">Unicorn Logo</string>
 </resources>
