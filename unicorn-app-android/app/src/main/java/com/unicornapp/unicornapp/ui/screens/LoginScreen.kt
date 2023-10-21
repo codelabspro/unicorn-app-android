@@ -210,7 +210,7 @@ fun LoginScreen(
                         .align(Alignment.CenterHorizontally)
                         .background(TransparentColor)
                 ) {
-                    Text(text = "Login")
+                    Text(text = "Back")
                 }
                 Spacer(modifier = Modifier.height(8.dp))
             }
