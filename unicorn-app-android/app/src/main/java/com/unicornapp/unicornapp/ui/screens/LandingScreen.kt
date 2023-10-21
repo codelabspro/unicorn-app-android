@@ -31,7 +31,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.unicornapp.unicornapp.R
+import app.unicornapp.mobile.android.unicorn.R
 import com.unicornapp.unicornapp.ui.navigation.Screen
 import com.unicornapp.unicornapp.ui.theme.PrimaryColor
 import com.unicornapp.unicornapp.ui.theme.TertiaryColor

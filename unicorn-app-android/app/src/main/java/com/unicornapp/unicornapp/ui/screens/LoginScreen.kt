@@ -47,7 +47,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.unicornapp.unicornapp.R
+import app.unicornapp.mobile.android.unicorn.R
 import com.unicornapp.unicornapp.ui.navigation.Screen
 import com.unicornapp.unicornapp.ui.theme.PrimaryColor
 import com.unicornapp.unicornapp.ui.theme.TransparentColor

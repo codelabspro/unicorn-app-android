@@ -18,7 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.unicornapp.unicornapp.R
+import app.unicornapp.mobile.android.unicorn.R
 
 @Composable
 fun HomeScreen(
