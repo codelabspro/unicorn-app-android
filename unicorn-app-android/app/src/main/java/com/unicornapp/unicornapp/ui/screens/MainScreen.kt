@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.unicornapp.unicornapp.ui.navigation.CustomAppBar
 import com.unicornapp.unicornapp.ui.navigation.DrawerBody
 import com.unicornapp.unicornapp.ui.navigation.MenuItem
@@ -26,6 +27,7 @@ fun MainScreen(
     navController: NavController,
     titles: List<String> = listOf("Unicorn")
 ) {
+    var drawerNavHostController: NavHostController
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
     Scaffold(
@@ -66,8 +68,8 @@ fun MainScreen(
         }
     ) { padding ->
         Box(modifier = Modifier.padding(padding)) {
-
-            SetupDrawerNavGraph(navController = navController as NavHostController)
+            drawerNavHostController = rememberNavController()
+            SetupDrawerNavGraph(navController = drawerNavHostController as NavHostController)
             CustomAppBar(
                 onNavigationIconClick = {
                     scope.launch {

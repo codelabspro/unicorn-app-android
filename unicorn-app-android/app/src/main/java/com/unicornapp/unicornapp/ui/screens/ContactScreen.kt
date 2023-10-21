@@ -18,6 +18,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.unicornapp.unicornapp.R
 import com.unicornapp.unicornapp.ui.navigation.Screen
+import com.unicornapp.unicornapp.ui.navigation.ScreenDrawer
 
 @Composable
 fun ContactScreen(
@@ -36,8 +37,8 @@ fun ContactScreen(
         )
         Text(
             modifier = Modifier.clickable {
-                navController.navigate(Screen.HomeScreen.route) {
-                    popUpTo(Screen.HomeScreen.route) {
+                navController.navigate(ScreenDrawer.HomeScreen.route) {
+                    popUpTo(ScreenDrawer.HomeScreen.route) {
                         inclusive = true
                     }
                 }

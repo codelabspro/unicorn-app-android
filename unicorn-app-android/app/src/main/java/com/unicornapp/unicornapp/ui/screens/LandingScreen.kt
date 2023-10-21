@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.unicornapp.unicornapp.R
 import com.unicornapp.unicornapp.ui.navigation.Screen
+import com.unicornapp.unicornapp.ui.navigation.ScreenDrawer
 import com.unicornapp.unicornapp.ui.theme.PrimaryColor
 import com.unicornapp.unicornapp.ui.theme.TertiaryColor
 import com.unicornapp.unicornapp.ui.theme.TransparentColor
@@ -102,11 +103,14 @@ fun LandingScreen(
             Spacer(modifier = Modifier.height(8.dp))
             Button(
                 onClick = {
-                    /* TODO-FIXME
+                    /*
                     navigator.navigate(HomeScreenDestination(
                         name = "TestUser"
                     ))
-                    */
+                     */
+                          navController.navigate(
+                              Screen.MainScreen.route
+                          )
                 },
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
