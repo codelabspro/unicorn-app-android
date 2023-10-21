@@ -25,6 +25,7 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
+import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -123,13 +124,18 @@ fun LoginScreen(
                 OutlinedTextField(
                     value = emailValue.value,
                     onValueChange = { emailValue.value = it },
-                    label = { Text(text = "Email") },
-                    placeholder = { Text(text = "Enter the phone number") },
+                    label = { Text(text = "Email", color = Color.White) },
+                    placeholder = { Text(text = "Enter email address", color = Color.White) },
                     singleLine = true,
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)
                         .fillMaxWidth(0.8f),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone)
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Color.White,
+                        unfocusedBorderColor = Color.White,
+                        textColor = Color.White
+                    )
                 )
 
                 OutlinedTextField(
@@ -145,12 +151,18 @@ fun LoginScreen(
                             )
                         }
                     },
-                    label = { Text(text = "Password") },
-                    placeholder = { Text(text = "Enter the password") },
+                    label = { Text(text = "Password", color = Color.White) },
+                    placeholder = { Text(text = "Enter the password", color = Color.White) },
                     singleLine = true,
                     visualTransformation = if (passwordVisibility.value) VisualTransformation.None
                     else PasswordVisualTransformation(),
-                    modifier = Modifier.fillMaxWidth(0.8f)
+                    modifier = Modifier.fillMaxWidth(0.8f),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Color.White,
+                        unfocusedBorderColor = Color.White,
+                        textColor = Color.White
+                    )
                 )
 
                 Spacer(modifier = Modifier.padding(10.dp))
