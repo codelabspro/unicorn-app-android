@@ -1,5 +1,6 @@
 package com.unicornapp.unicornapp.ui.screens
 
+import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -17,6 +18,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -31,7 +33,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import app.unicornapp.mobile.android.unicorn.R
+import com.unicornapp.unicornapp.R
 import com.unicornapp.unicornapp.ui.navigation.Screen
 import com.unicornapp.unicornapp.ui.theme.PrimaryColor
 import com.unicornapp.unicornapp.ui.theme.TertiaryColor
@@ -42,6 +44,9 @@ import com.unicornapp.unicornapp.ui.theme.createGradientEffect
 fun LandingScreen(
     navController: NavController
 ) {
+    LaunchedEffect(key1 = "LandingScreenAppeared") {
+        Log.d("UnicornApp", "navController: $navController, route: ${Screen.LoginScreen.route}")
+    }
     val gradientColors = listOf(
         PrimaryColor,
         PrimaryColor
@@ -112,7 +117,6 @@ fun LandingScreen(
             Spacer(modifier = Modifier.height(8.dp))
             Button(
                 onClick = {
-                          // TODO-FIXME
                           navController.navigate(
                               Screen.LoginScreen.route
                           )
@@ -122,6 +126,19 @@ fun LandingScreen(
                     .background(TransparentColor)
             ) {
                 Text(text = "Login")
+            }
+            Spacer(modifier = Modifier.height(8.dp))
+            Button(
+                onClick = {
+                    navController.navigate(
+                        Screen.RegistrationScreen.route
+                    )
+                },
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .background(TransparentColor)
+            ) {
+                Text(text = "Sign Up")
             }
             Spacer(modifier = Modifier.height(8.dp))
         }

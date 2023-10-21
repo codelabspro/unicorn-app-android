@@ -54,7 +54,7 @@ import com.unicornapp.unicornapp.ui.theme.createGradientEffect
 
 
 @Composable
-fun LoginScreen(
+fun RegistrationScreen(
     navController: NavController
     // TODO-FIXME navigator: DestinationsNavigator
 ) {
@@ -96,7 +96,7 @@ fun LoginScreen(
                     .size(150.dp)
             )
             ClickableText(
-                text = AnnotatedString("Login"),
+                text = AnnotatedString("Sign Up"),
                 style = MaterialTheme.typography.h3.copy(color = Color.White),
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally),
@@ -178,7 +178,7 @@ fun LoginScreen(
                         .fillMaxWidth(0.8f)
                         .height(50.dp)
                 ) {
-                    Text(text = "Sign In", fontSize = 20.sp)
+                    Text(text = "Sign Up", fontSize = 20.sp)
                 }
                 Spacer(modifier = Modifier.padding(4.dp))
 
@@ -215,7 +215,7 @@ fun LoginScreen(
                     navigator.navigate(
                     )
                     */
-                    navController.popBackStack()
+                        navController.popBackStack()
                     },
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)
@@ -233,7 +233,7 @@ fun LoginScreen(
 
 @Composable
 @Preview
-fun LoginScreenPreview() {
+fun RegistrationScreenPreview() {
     // TODO-FIXME-CLEANUP LandingScreen(navigator = MockDestinationsNavigator())
-    LoginScreen(navController = rememberNavController())
+    RegistrationScreen(navController = rememberNavController())
 }

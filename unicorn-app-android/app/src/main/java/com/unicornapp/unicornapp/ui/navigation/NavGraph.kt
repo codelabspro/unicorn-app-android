@@ -10,15 +10,55 @@ import com.unicornapp.unicornapp.ui.screens.HomeDetailScreen
 import com.unicornapp.unicornapp.ui.screens.HomeScreen
 import com.unicornapp.unicornapp.ui.screens.LandingScreen
 import com.unicornapp.unicornapp.ui.screens.LoginScreen
+import com.unicornapp.unicornapp.ui.screens.MainScreen
 import com.unicornapp.unicornapp.ui.screens.NotificationScreen
+import com.unicornapp.unicornapp.ui.screens.RegistrationScreen
 
 @Composable
-fun SetupNavGraph(
+fun SetupDrawerNavGraph(
+    navController: NavHostController
+) {
+    NavHost(
+        navController = navController,
+        startDestination = ScreenDrawer.HomeScreen.route
+        // TODO-FIXME-CLEANUP startDestination = Screen.MainScreen.route
+    ) {
+
+        composable(
+            route = ScreenDrawer.HomeScreen.route
+        ) {
+            HomeScreen(
+                navController = navController
+            )
+        }
+
+        composable(
+            route = ScreenDrawer.ContactScreen.route
+        ) {
+            ContactScreen(
+                navController = navController
+            )
+        }
+
+        composable(
+            route = ScreenDrawer.NotificationScreen.route
+        ) {
+            NotificationScreen(
+                navController = navController
+            )
+        }
+
+    }
+}
+
+@Composable
+fun SetupRootNavGraph(
     navController: NavHostController
 ) {
     NavHost(
         navController = navController,
         startDestination = Screen.LandingScreen.route
+        // TODO-FIXME-CLEANUP startDestination = Screen.MainScreen.route
     ) {
 
         composable(
@@ -38,33 +78,17 @@ fun SetupNavGraph(
         }
 
         composable(
-            route = Screen.HomeScreen.route
+            route = Screen.RegistrationScreen.route
         ) {
-            HomeScreen(
+            RegistrationScreen(
                 navController = navController
             )
         }
 
         composable(
-            route = Screen.HomeDetailScreen.route
+            route = Screen.MainScreen.route
         ) {
-            HomeDetailScreen(
-                navController = navController
-            )
-        }
-
-        composable(
-            route = Screen.NotificationScreen.route
-        ) {
-            NotificationScreen(
-                navController = navController
-            )
-        }
-
-        composable(
-            route = Screen.ContactScreen.route
-        ) {
-            ContactScreen(
+            MainScreen(
                 navController = navController
             )
         }

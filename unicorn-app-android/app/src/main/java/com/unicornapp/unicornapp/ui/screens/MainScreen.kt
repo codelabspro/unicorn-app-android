@@ -17,7 +17,7 @@ import androidx.navigation.NavHostController
 import com.unicornapp.unicornapp.ui.navigation.CustomAppBar
 import com.unicornapp.unicornapp.ui.navigation.DrawerBody
 import com.unicornapp.unicornapp.ui.navigation.MenuItem
-import com.unicornapp.unicornapp.ui.navigation.SetupNavGraph
+import com.unicornapp.unicornapp.ui.navigation.SetupDrawerNavGraph
 import kotlinx.coroutines.launch
 
 
@@ -67,7 +67,7 @@ fun MainScreen(
     ) { padding ->
         Box(modifier = Modifier.padding(padding)) {
 
-            SetupNavGraph(navController = navController as NavHostController)
+            SetupDrawerNavGraph(navController = navController as NavHostController)
             CustomAppBar(
                 onNavigationIconClick = {
                     scope.launch {
