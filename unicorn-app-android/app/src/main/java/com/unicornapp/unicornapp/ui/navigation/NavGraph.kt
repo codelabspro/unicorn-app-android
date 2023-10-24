@@ -61,6 +61,7 @@ fun SetupRootNavGraph(
         // TODO-FIXME-CLEANUP startDestination = Screen.MainScreen.route
     ) {
 
+        /*
         composable(
             route = Screen.LandingScreen.route
         ) {
@@ -68,6 +69,7 @@ fun SetupRootNavGraph(
                 navController = navController
             )
         }
+        */
 
         composable(
             route = Screen.LoginScreen.route

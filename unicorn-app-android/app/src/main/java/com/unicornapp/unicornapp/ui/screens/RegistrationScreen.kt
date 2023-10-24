@@ -46,6 +46,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.ramcosta.composedestinations.annotation.Destination
 import com.unicornapp.unicornapp.R
 import com.unicornapp.unicornapp.ui.navigation.Screen
 import com.unicornapp.unicornapp.ui.navigation.ScreenDrawer
@@ -53,7 +54,7 @@ import com.unicornapp.unicornapp.ui.theme.PrimaryColor
 import com.unicornapp.unicornapp.ui.theme.TransparentColor
 import com.unicornapp.unicornapp.ui.theme.createGradientEffect
 
-
+@Destination
 @Composable
 fun RegistrationScreen(
     navController: NavController

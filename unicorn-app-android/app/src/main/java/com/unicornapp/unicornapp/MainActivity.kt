@@ -27,12 +27,14 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import com.ramcosta.composedestinations.DestinationsNavHost
 import com.unicornapp.unicornapp.ui.navigation.CustomAppBar
 import com.unicornapp.unicornapp.ui.navigation.DrawerBody
 import com.unicornapp.unicornapp.ui.navigation.MenuItem
 import com.unicornapp.unicornapp.ui.navigation.Screen
 import com.unicornapp.unicornapp.ui.navigation.SetupRootNavGraph
 import com.unicornapp.unicornapp.ui.screens.HomeScreen
+import com.unicornapp.unicornapp.ui.screens.NavGraphs
 import com.unicornapp.unicornapp.ui.theme.UnicornAppTheme
 import kotlinx.coroutines.launch
 
@@ -51,8 +53,8 @@ class MainActivity : ComponentActivity() {
                 navHostController = rememberNavController()
                 // A surface container using the 'background' color from the theme
                 // MyApp(navController = navController)
-                SetupRootNavGraph(navController = navHostController)
-
+                // TODO-FIXME-CLEANUP SetupRootNavGraph(navController = navHostController)
+                DestinationsNavHost(navGraph = NavGraphs.root)
             }
         }
     }

@@ -15,13 +15,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.ramcosta.composedestinations.annotation.Destination
 import com.unicornapp.unicornapp.ui.navigation.CustomAppBar
 import com.unicornapp.unicornapp.ui.navigation.DrawerBody
 import com.unicornapp.unicornapp.ui.navigation.MenuItem
 import com.unicornapp.unicornapp.ui.navigation.SetupDrawerNavGraph
 import kotlinx.coroutines.launch
 
-
+@Destination
 @Composable
 fun MainScreen(
     navController: NavController,

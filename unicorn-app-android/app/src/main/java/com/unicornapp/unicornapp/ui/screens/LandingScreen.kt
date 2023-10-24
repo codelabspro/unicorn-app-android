@@ -33,17 +33,24 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootNavGraph
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.unicornapp.unicornapp.R
 import com.unicornapp.unicornapp.ui.navigation.Screen
 import com.unicornapp.unicornapp.ui.navigation.ScreenDrawer
+import com.unicornapp.unicornapp.ui.screens.destinations.MainScreenDestination
 import com.unicornapp.unicornapp.ui.theme.PrimaryColor
 import com.unicornapp.unicornapp.ui.theme.TertiaryColor
 import com.unicornapp.unicornapp.ui.theme.TransparentColor
 import com.unicornapp.unicornapp.ui.theme.createGradientEffect
 
+@RootNavGraph(start = true)
+@Destination
 @Composable
 fun LandingScreen(
-    navController: NavController
+    navController: NavController,
+    navigator: DestinationsNavigator
 ) {
     LaunchedEffect(key1 = "LandingScreenAppeared") {
         Log.d("UnicornApp", "navController: $navController, route: ${Screen.LoginScreen.route}")
@@ -103,14 +110,15 @@ fun LandingScreen(
             Spacer(modifier = Modifier.height(8.dp))
             Button(
                 onClick = {
+
+                    navigator.navigate(
+                        MainScreenDestination()
+                    )
                     /*
-                    navigator.navigate(HomeScreenDestination(
-                        name = "TestUser"
-                    ))
-                     */
                           navController.navigate(
                               Screen.MainScreen.route
                           )
+                     */
                 },
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
