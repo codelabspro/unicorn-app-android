@@ -50,7 +50,7 @@ fun SetupDrawerNavGraph(
 
     }
 }
-
+/* TODO-FIXME-DEPRECATE
 @Composable
 fun SetupRootNavGraph(
     navController: NavHostController
@@ -96,3 +96,4 @@ fun SetupRootNavGraph(
         }
     }
 }
+*/

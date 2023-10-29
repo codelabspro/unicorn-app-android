@@ -1,4 +1,4 @@
-package com.unicornapp.unicornapp.ui.navigation
+package com.unicornapp.unicornapp.ui.screens.drawernav
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -16,7 +16,6 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,7 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.unicornapp.unicornapp.R
-import kotlinx.coroutines.launch
+import com.unicornapp.unicornapp.ui.navigation.MenuItem
 
 
 @Composable

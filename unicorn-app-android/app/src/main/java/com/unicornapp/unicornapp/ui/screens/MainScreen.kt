@@ -16,8 +16,9 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.unicornapp.unicornapp.ui.navigation.CustomAppBar
-import com.unicornapp.unicornapp.ui.navigation.DrawerBody
+import com.unicornapp.unicornapp.ui.screens.drawernav.DrawerBody
 import com.unicornapp.unicornapp.ui.navigation.MenuItem
 import com.unicornapp.unicornapp.ui.navigation.SetupDrawerNavGraph
 import kotlinx.coroutines.launch
@@ -26,9 +27,10 @@ import kotlinx.coroutines.launch
 @Composable
 fun MainScreen(
     navController: NavController,
+    navigator: DestinationsNavigator,
     titles: List<String> = listOf("Unicorn")
 ) {
-    var drawerNavHostController: NavHostController
+    var drawerNavHostController: NavHostController = rememberNavController()
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
     Scaffold(
@@ -63,13 +65,15 @@ fun MainScreen(
                         scaffoldState.drawerState.close()
                     }
                     println("Clicked on ${menuItem.title}")
-                    navController.navigate(route = menuItem.route)
+                    // TODO-FIXME navController.navigate(route = menuItem.route)
+                    // navigator.navigate(route = menuItem.route)
+                    drawerNavHostController.navigate(route = menuItem.route)
                 }
             )
         }
     ) { padding ->
         Box(modifier = Modifier.padding(padding)) {
-            drawerNavHostController = rememberNavController()
+            // TODO-FIXME-CLEANUP drawerNavHostController = rememberNavController()
             SetupDrawerNavGraph(navController = drawerNavHostController as NavHostController)
             CustomAppBar(
                 onNavigationIconClick = {
